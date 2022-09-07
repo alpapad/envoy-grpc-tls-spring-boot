@@ -1,6 +1,13 @@
 version: "3.8"
 services:
 
+  api-gw:
+    image: alpapad/api-gw:0.0.1-SNAPSHOT
+    build:
+      context: api-gw
+      dockerfile: Dockerfile
+    ports:
+      - 8443:8443
   envoy-to-grpc:
     image: alpapad/envoy-proxy:0.0.1-SNAPSHOT
     build:
@@ -8,7 +15,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8081:8081
-
   spring-grpc:
     image: alpapad/spring-grpc:0.0.1-SNAPSHOT
     ports:
