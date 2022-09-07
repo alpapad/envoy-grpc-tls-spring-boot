@@ -4,7 +4,11 @@ for mtls + certs to work you will need to modify /etc/hosts and add
 
 `127.0.1.1	my-webserver.internal.ekervhen.xyz`
 
-# How to run
+# Communication
+
+ `client` -> (mtls) - > `api gw` -> (mtls) -> `envoy proxy (sidecar)` -> (mtls) -> `spring boot sample application`
+ 
+# How to test
 
 in parent folder:
  - `docker-compose up`
