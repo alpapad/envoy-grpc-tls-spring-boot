@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  envoy-to-grpc:
+    image: alpapad/envoy-proxy:0.0.1-SNAPSHOT
+    build:
+      context: envoy
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+
+  spring-grpc:
+    image: alpapad/spring-grpc:0.0.1-SNAPSHOT
+    ports:
+       - 9090:9090
+
